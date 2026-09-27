@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Virat Bhai — Cricket News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch:#0F3D2E;
+    --pitch-deep:#0A2B20;
+    --willow:#C9A76A;
+    --cream:#F2EFE6;
+    --ink:#12181A;
+    --ball:#B3382C;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    background:var(--pitch-deep);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    overflow-x:hidden;
+  }
+  .wrap{max-width:480px; margin:0 auto; padding:0 22px;}
+
+  /* Hero */
+  .hero{
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgba(201,167,106,0.2), transparent 60%),
+      linear-gradient(180deg, var(--pitch) 0%, var(--pitch-deep) 100%);
+    padding:52px 0 40px;
+    border-bottom:1px solid rgba(201,167,106,0.25);
+    text-align:center;
+  }
+  .logo{
+    width:76px;
+    height:76px;
+    margin:0 auto 20px;
+    display:block;
+    filter:drop-shadow(0 6px 18px rgba(201,167,106,0.35));
+  }
+  .vip-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.04em;
+    color:var(--pitch-deep);
+    background:linear-gradient(135deg, #E4C888, var(--willow));
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .eyebrow{
+    font-size:14px;
+    letter-spacing:0.02em;
+    color:var(--willow);
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:46px;
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    color:var(--cream);
+    text-shadow:0 2px 30px rgba(201,167,106,0.25);
+  }
+  .sub{
+    font-size:16px;
+    line-height:1.55;
+    color:rgba(242,239,230,0.78);
+    margin:16px auto 0;
+    max-width:32ch;
+  }
+
+  .stat-row{
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    margin-top:30px;
+  }
+  .stat b{
+    font-family:'Fraunces',serif;
+    font-size:26px;
+    font-weight:700;
+    display:block;
+    color:var(--willow);
+  }
+  .stat span{
+    font-size:13px;
+    color:rgba(242,239,230,0.65);
+  }
+
+  .cta{
+    display:block;
+    text-align:center;
+    margin-top:32px;
+    background:var(--ball);
+    color:var(--cream);
+    text-decoration:none;
+    font-weight:600;
+    font-size:16px;
+    padding:16px 20px;
+    border-radius:3px;
+    box-shadow:0 10px 24px -12px rgba(179,56,44,0.6);
+  }
+  .cta:active{transform:translateY(1px);}
+  .cta-note{
+    font-size:12.5px;
+    color:rgba(242,239,230,0.55);
+    text-align:center;
+    margin-top:10px;
+  }
+
+  /* Features */
+  .features{padding:44px 0;}
+  .features h2{
+    font-family:'Fraunces',serif;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:22px;
+    color:var(--cream);
+    text-align:center;
+  }
+  .feature{
+    display:flex;
+    gap:16px;
+    padding:18px 0;
+    border-top:1px solid rgba(201,167,106,0.18);
+  }
+  .feature:last-child{border-bottom:1px solid rgba(201,167,106,0.18);}
+  .feature .mark{
+    font-family:'Fraunces',serif;
+    font-size:20px;
+    color:var(--willow);
+    width:28px;
+    flex-shrink:0;
+  }
+  .feature h3{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .feature p{
+    font-size:14px;
+    line-height:1.5;
+    color:rgba(242,239,230,0.7);
+  }
+
+  /* Footer CTA */
+  footer{
+    padding:8px 0 48px;
+    text-align:center;
+  }
+  footer .cta{max-width:100%;}
+  footer .fine{
+    margin-top:18px;
+    font-size:12px;
+    color:rgba(242,239,230,0.4);
+    line-height:1.5;
+  }
+
+  @media (min-width:520px){
+    h1{font-size:46px;}
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="wrap">
+      <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Virat Bhai crest">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#C9A76A" stroke-width="3"/>
+        <circle cx="50" cy="50" r="40" fill="#0A2B20"/>
+        <rect x="46" y="16" width="8" height="34" rx="3" fill="#C9A76A" transform="rotate(18 50 33)"/>
+        <path d="M42 46 L58 46 L54 58 L46 58 Z" fill="#C9A76A" transform="rotate(18 50 52)"/>
+        <circle cx="50" cy="74" r="10" fill="#B3382C"/>
+        <path d="M45 74 Q50 71 55 74" stroke="#F2EFE6" stroke-width="1.2" fill="none"/>
+        <path d="M45 78 Q50 75 55 78" stroke="#F2EFE6" stroke-width="1.2" fill="none"/>
+      </svg>
+      <div class="vip-badge">★ VIP Channel</div>
+      <div class="eyebrow">Telegram · Cricket News Channel</div>
+      <h1>Virat Bhai</h1>
+      <p class="sub">Live score updates, match analysis aur player news — sabse pehle, seedha aapke phone par.</p>
+
+      <div class="stat-row">
+        <div class="stat">
+          <b>70,000+</b>
+          <span>Followers</span>
+        </div>
+        <div class="stat">
+          <b>Daily</b>
+          <span>Match updates</span>
+        </div>
+      </div>
+
+      <a class="cta" href="https://t.me/+k4Sd2ZBaAzUwY2Jl">Channel Join Karein</a>
+      <p class="cta-note">Telegram par free join — kabhi bhi leave kar sakte hain</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Channel mein kya milega</h2>
+
+      <div class="feature">
+        <div class="mark">①</div>
+        <div>
+          <h3>Live Scores</h3>
+          <p>Har over, har wicket ka update — match chalte hi.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="mark">②</div>
+        <div>
+          <h3>Match Analysis</h3>
+          <p>Pitch report, team form aur squad news, saral bhasha mein.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="mark">③</div>
+        <div>
+          <h3>Player Updates</h3>
+          <p>Injury news, selection aur interviews — ek jagah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <a class="cta" href="https://t.me/+k4Sd2ZBaAzUwY2Jl">Abhi Join Karein</a>
+      <p class="fine">Virat Bhai — Cricket News Community</p>
+    </div>
+  </footer>
+
+</body>
+</html>
